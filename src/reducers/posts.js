@@ -1,6 +1,5 @@
 import { POSTS__GET } from '../actions/ActionTypes';
 
-
 const initialState = {
   posts: []
 };

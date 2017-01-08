@@ -1,10 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import ListItemForm from '../components/ListItemForm';
-import { addItem, addFlashMessage, getPosts } from '../actions/index';
+import { getPosts } from '../actions/index';
 import { Link } from 'react-router';
-
-import '../assets/css/ListPage.css';
 
 class Posts extends Component {
   componentDidMount() {
