@@ -19,7 +19,7 @@ class App extends Component {
             <Link to={'/about'} className="list-item">About</Link>
           </div>
         </div>
-        <div className="App-body">
+        <div className="App-body container">
           {this.props.children}
         </div>
       </div>

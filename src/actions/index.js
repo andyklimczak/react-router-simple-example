@@ -29,3 +29,21 @@ export function dismissFlashMessage(stamp) {
 export function deleteFlashMessage(timestamp) {
   return { type: types.FLASH_MESSAGE__DELETE, timestamp };
 }
+
+export function getPosts() {
+  const { API_URL } = process.env;
+  return dispatch => {
+    setTimeout(() => {
+      fetch(`${API_URL}/posts`)
+      .then((res) => {
+        return res.json();
+      }).then(json => {
+        dispatch(getPostsDone(json));
+      });
+    }, 5000);
+  };
+}
+
+export function getPostsDone(posts) {
+  return { type: types.POSTS__GET, posts };
+}
