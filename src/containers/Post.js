@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { getPost } from '../actions/index';
-import { Link } from 'react-router';
 
 class Post extends Component {
-  componentDidMount() {
+  componentWillMount() {
     const { dispatch } = this.props;
     const { postId } = this.props.params;
     dispatch(getPost(postId));
