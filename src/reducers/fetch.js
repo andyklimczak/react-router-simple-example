@@ -1,15 +1,14 @@
-import { POST__GET } from '../actions/ActionTypes';
+import { FETCHING__SET } from '../actions/ActionTypes';
 
 const initialState = {
-  post: {}
+  needFetching: true
 };
 
 export default function list(state = initialState, action) {
   switch (action.type) {
-    case POST__GET:
+    case FETCHING__SET:
       return Object.assign({}, state, {
-        post: action.post,
-        needFetching: false,
+        needFetching: action.needFetching,
       });
     default:
       return state;

@@ -8,6 +8,7 @@ export function getPosts() {
       return res.json();
     }).then(json => {
       dispatch(getPostsDone(json));
+      dispatch(setFetching(false));
     });
   };
 }
@@ -24,10 +25,15 @@ export function getPost(postId) {
       return res.json();
     }).then(json => {
       dispatch(getPostDone(json));
+      dispatch(setFetching(false));
     });
   };
 }
 
 export function getPostDone(post) {
   return { type: types.POST__GET, post };
+}
+
+export function setFetching(needFetch) {
+  return { type: types.FETCHING__SET, needFetch };
 }

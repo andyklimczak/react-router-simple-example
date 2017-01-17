@@ -26,7 +26,9 @@ Posts.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return { posts: state.posts.posts };
+  return {
+    posts: state.posts.posts,
+  };
 }
 
 export default connect(mapStateToProps)(Posts);
